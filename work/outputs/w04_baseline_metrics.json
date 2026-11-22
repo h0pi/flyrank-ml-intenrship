@@ -1,0 +1,19 @@
+{
+  "slice": "March 2026, decision 2026-03-16, GSC available, >=100 impressions 1-15 Mar, created before March",
+  "rows": 74377,
+  "base_rate": 0.3359,
+  "flagged_review_page": 33013,
+  "precision_at_10": 1.0,
+  "precision_at_50": 0.98,
+  "precision_at_100": 0.96,
+  "precision_at_500": 0.832,
+  "precision_at_1000": 0.779,
+  "signal_verdicts": {
+    "staleness_age": "MIXED",
+    "early_momentum": "CONFIRMED"
+  },
+  "inputs": [
+    "momentum",
+    "imp_per_day"
+  ]
+}
