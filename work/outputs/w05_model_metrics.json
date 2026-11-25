@@ -1,0 +1,57 @@
+{
+  "split": "GroupKFold(5) by client_hash_id",
+  "seed": 42,
+  "sklearn": "1.9.1",
+  "rows": 74377,
+  "base_rate": 0.3359,
+  "results": {
+    "Baseline rule (week 4)": {
+      "P@50 (fold mean)": 0.864,
+      "P@100 (fold mean)": 0.816,
+      "P@500 (fold mean)": 0.6936,
+      "P@1000 (fold mean)": 0.6126,
+      "ROC-AUC (fold mean)": 0.6236,
+      "ROC-AUC (fold sd)": 0.0522,
+      "P@50 (pooled)": 0.98,
+      "P@100 (pooled)": 0.96,
+      "P@500 (pooled)": 0.832,
+      "P@1000 (pooled)": 0.779
+    },
+    "Logistic Regression": {
+      "P@50 (fold mean)": 0.912,
+      "P@100 (fold mean)": 0.894,
+      "P@500 (fold mean)": 0.7544,
+      "P@1000 (fold mean)": 0.6866,
+      "ROC-AUC (fold mean)": 0.6656,
+      "ROC-AUC (fold sd)": 0.0532,
+      "P@50 (pooled)": 0.98,
+      "P@100 (pooled)": 0.97,
+      "P@500 (pooled)": 0.88,
+      "P@1000 (pooled)": 0.825
+    },
+    "Gradient Boosting": {
+      "P@50 (fold mean)": 0.892,
+      "P@100 (fold mean)": 0.868,
+      "P@500 (fold mean)": 0.7452,
+      "P@1000 (fold mean)": 0.6808,
+      "ROC-AUC (fold mean)": 0.6788,
+      "ROC-AUC (fold sd)": 0.0405,
+      "P@50 (pooled)": 0.88,
+      "P@100 (pooled)": 0.88,
+      "P@500 (pooled)": 0.856,
+      "P@1000 (pooled)": 0.809
+    },
+    "Base rate (random pick)": {
+      "P@50 (fold mean)": 0.3359,
+      "P@100 (fold mean)": 0.3359,
+      "P@500 (fold mean)": 0.3359,
+      "P@1000 (fold mean)": 0.3359,
+      "ROC-AUC (fold mean)": 0.5,
+      "ROC-AUC (fold sd)": null,
+      "P@50 (pooled)": 0.3359,
+      "P@100 (pooled)": 0.3359,
+      "P@500 (pooled)": 0.3359,
+      "P@1000 (pooled)": 0.3359
+    }
+  }
+}
