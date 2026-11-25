@@ -1,0 +1,143 @@
+{
+  "week": "W07",
+  "data": "March 2026, decision moment 2026-03-16",
+  "pages": 74377,
+  "clients": 36,
+  "split": "GroupKFold(5) by client, out-of-fold scores",
+  "model": "LogisticRegression (week 5)",
+  "order": "out-of-fold model score (traffic shown, not weighted)",
+  "oof_roc_auc": 0.658,
+  "base_rate": 0.336,
+  "precision_at_k": {
+    "10": {
+      "queue": 1.0,
+      "week4_rule": 1.0
+    },
+    "25": {
+      "queue": 1.0,
+      "week4_rule": 1.0
+    },
+    "50": {
+      "queue": 0.98,
+      "week4_rule": 0.98
+    },
+    "100": {
+      "queue": 0.97,
+      "week4_rule": 0.96
+    },
+    "200": {
+      "queue": 0.93,
+      "week4_rule": 0.91
+    },
+    "500": {
+      "queue": 0.88,
+      "week4_rule": 0.832
+    },
+    "1000": {
+      "queue": 0.825,
+      "week4_rule": 0.779
+    },
+    "2000": {
+      "queue": 0.754,
+      "week4_rule": 0.722
+    }
+  },
+  "refresh_group_precision": {
+    "50.0": {
+      "queue": 0.78,
+      "week4_rule": 0.58,
+      "random": 0.424
+    },
+    "100.0": {
+      "queue": 0.73,
+      "week4_rule": 0.58,
+      "random": 0.424
+    },
+    "500.0": {
+      "queue": 0.684,
+      "week4_rule": 0.63,
+      "random": 0.424
+    }
+  },
+  "weekly_lanes": {
+    "check_technical": {
+      "pages": 20,
+      "declined": 1.0,
+      "lane_base_rate": 0.864
+    },
+    "review_refresh": {
+      "pages": 30,
+      "declined": 0.833,
+      "lane_base_rate": 0.424
+    },
+    "fix_snippet": {
+      "pages": 10,
+      "declined": 0.3,
+      "lane_base_rate": 0.273
+    }
+  },
+  "archetypes": {
+    "cliff_drop": {
+      "pages": 867,
+      "declined": 0.864,
+      "action": "check_technical"
+    },
+    "new_page_settling": {
+      "pages": 8998,
+      "declined": 0.307,
+      "action": "monitor"
+    },
+    "sliding_visible": {
+      "pages": 28756,
+      "declined": 0.424,
+      "action": "review_refresh"
+    },
+    "low_ctr_page_one": {
+      "pages": 9984,
+      "declined": 0.273,
+      "action": "fix_snippet"
+    },
+    "stable": {
+      "pages": 25772,
+      "declined": 0.254,
+      "action": "monitor"
+    }
+  },
+  "decline_by_age": {
+    "<45d": {
+      "pages": 9826,
+      "declined": 0.324
+    },
+    "45-90d": {
+      "pages": 12231,
+      "declined": 0.377
+    },
+    "90-180d": {
+      "pages": 15154,
+      "declined": 0.44
+    },
+    "180-270d": {
+      "pages": 19769,
+      "declined": 0.32
+    },
+    "270-365d": {
+      "pages": 9638,
+      "declined": 0.216
+    },
+    ">1y": {
+      "pages": 7759,
+      "declined": 0.272
+    }
+  },
+  "monitoring_reference": {
+    "base_rate": 0.3359,
+    "precision_at_50": 0.98,
+    "rule_precision_at_50": 0.98,
+    "momentum_p10": -0.5891,
+    "momentum_p50": -0.0468,
+    "log_imp_p50": 3.7119,
+    "cliff_share": 0.0117,
+    "top_client_share": 0.2361
+  },
+  "claim_level": "observed association on one month; decision support, not causal"
+}
