@@ -12,6 +12,7 @@ description: Weekly review of my FlyRank internship. Reads my logged-in internsh
 ## Tools
 
 - **Claude in Chrome (MCP):** my real Chrome, already logged in to https://internship.flyrank.ai. READ-ONLY use.
+- **Repo check script:** `work/agent/check_notebooks.py` (GitHub public API, no token).
 - **GitHub public API (curl):** https://api.github.com/repos/h0pi/flyrank-ml-intenrship - commits and notebook files.
 - **File write:** only `work/agent/reports/weekly-review-YYYY-MM-DD.md`.
 
@@ -19,7 +20,7 @@ description: Weekly review of my FlyRank internship. Reads my logged-in internsh
 
 1. Open `https://internship.flyrank.ai/intern/submissions` and read every submission: title, track, status, date.
 2. Open `https://internship.flyrank.ai/intern/assignments?mode=path&week=all`, read the current week number, and list every assignment of the current week with its status.
-3. For each submitted Machine Learning assignment whose deliverable is a notebook, check on GitHub that the matching notebook exists in `work/notebooks/`, and that its code cells have outputs (executed). Flag any that are missing or empty.
+3. Run `python work/agent/check_notebooks.py` (v2) and read its table: every notebook in `work/notebooks/` with OK / PROBLEM / EMPTY. Flag PROBLEM notebooks (filled cells without outputs or with errors); list EMPTY ones as unused skeletons. Do not count cells yourself.
 4. Write the report:
    - **Done** (submitted this program, grouped by track, with dates)
    - **Open this week** (title, track, workload hours) - most hours first
