@@ -94,11 +94,11 @@ footer {{ margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule)
 
 <section class="abstract">
 <h2>Abstract</h2>
-<p>Content teams cannot check thousands of pages every week, so the question is which pages to look at first: which ones will lose Google impressions in the next 16 days?
+<p>FlyRank researches, writes and publishes content into its clients' websites and then watches how that content performs in search; published pages slowly decay, and the decision that matters is which of thousands of pages a person should look at first, so this study asks which pages will lose Google impressions in the next 16 days.
 I used one month of real Search Console data from the FlyRank ML Internship warehouse ({n(d['frame_pages'])} pages from {d['frame_clients']} clients, decision moment 16 March 2026) and labelled a page as declining when its daily impressions in 16–31 March fell below 80% of its 1–15 March level (base rate {pc(base)}).
 A frozen rule (“already sliding × traffic”) was compared with a logistic regression on seven features known on 16 March, with 5-fold cross-validation grouped by client so every score comes from a model that never saw that client, plus a deliberate-leak check.
 Both methods find almost only real declines at the very top of the list ({pc(lr['P@50'])} of the top 50, against {pc(base)} for a random pick), but the model ranks better overall (ROC-AUC {f3(lr['ROC-AUC'])} vs {f3(rule['ROC-AUC'])}) and clearly better among pages that are only starting to slide ({pc(rg['top']['50']['model'])} vs {pc(rg['top']['50']['rule'])} of the top 50).
-The output is decision support, not a forecast of Google: a weekly review queue with reason codes, three action lanes, a no-go list and explicit limits (one month, associations only).</p>
+For FlyRank's content work, the output is decision support, not a forecast of Google: a weekly review queue with reason codes, three action lanes, a no-go list and explicit limits (one month, associations only).</p>
 </section>
 
 <nav aria-label="Contents"><b>Contents</b>
@@ -109,6 +109,7 @@ The output is decision support, not a forecast of Google: a weekly review queue 
 </ol></nav>
 
 <h2 id="intro">1. Introduction: the Monday problem</h2>
+<p><b>The case: FlyRank's content.</b> FlyRank runs content as infrastructure: it researches and writes articles, publishes them straight into client websites, then follows their Google Search Console data and keeps optimizing them. Pages that rank do not stay there; positions slip, impressions and clicks fall, and with many clients and many thousands of pages, a decline is easy to notice too late. FlyRank's product already flags pages with hand-written rules (thresholds chosen by people). This paper asks the question behind those flags with real data: can a ranking learned from early signals beat a simple rule at telling a person which page to fix first? Product flags were never used as inputs, only the raw search data.</p>
 <p>It is Monday morning. An editor has a few hours for maintenance and thousands of published pages across many client sites. Some of them are about to lose a big part of their search visibility; most are fine. Without a list, the editor checks whatever they remember, or nothing.</p>
 <p>This work builds that list. The goal is not to explain why Google ranks pages the way it does, but to put the pages most likely to decline at the top, with a reason a person can check in a minute and a suggested action. A false alarm costs about twenty minutes of review; a missed decline can cost weeks of lost traffic before anyone notices.</p>
 <p>The tension: the obvious rule, “look at pages that are already dropping”, is very hard to beat at the top of the list, because a page that collapsed rarely bounces back within two weeks. The interesting question is whether a model adds anything <em>beyond</em> that, and where.</p>
