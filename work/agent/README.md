@@ -4,7 +4,7 @@
 
 **For whom:** me, a FlyRank intern with two tracks (Machine Learning + AI Fluency) and ~35 assignments. It is useful for any intern on the same portal; only the repo name changes.
 
-**Demo video (3–5 min, captions, live run):** _link added after upload_
+**Demo video (3:43, captions instead of voice, frames from a live run on 25 Nov 2026):** https://youtu.be/AuqioaB6B8E
 
 ## How it works
 
